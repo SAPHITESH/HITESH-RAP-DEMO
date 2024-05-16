@@ -1,0 +1,42 @@
+managed implementation in class ZBP_R_TAB_RAP_BTP unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TAB_RAP_BTP alias Material
+persistent table ztab_rap_btp
+draft table ZTAB_RAP_BTP_D
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Matnr;
+
+  field ( readonly )
+   LastChanged,
+   LocalLastChanged;
+
+  field ( readonly : update )
+   Matnr;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTAB_RAP_BTP
+  {
+    Matnr = matnr;
+    Matart = matart;
+    MatDesc = mat_desc;
+    Uom = uom;
+    LocalLastChanged = local_last_changed;
+    LastChanged = last_changed;
+  }
+}

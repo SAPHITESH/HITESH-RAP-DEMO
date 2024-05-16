@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_TAB_RAP_BTP'
+define service ZUI_TAB_RAP_BTP_O4 {
+  expose ZC_TAB_RAP_BTP as Material;
+}

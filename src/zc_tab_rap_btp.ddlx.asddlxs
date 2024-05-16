@@ -1,0 +1,60 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Material', 
+    typeNamePlural: 'Materials'
+  }
+}
+annotate view ZC_TAB_RAP_BTP with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Material', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  Matnr;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Matart'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Matart'
+  } ]
+  Matart;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'MatDesc'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'MatDesc'
+  } ]
+  MatDesc;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'Uom'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Uom'
+  } ]
+  Uom;
+  
+  @UI.hidden: true
+  LocalLastChanged;
+}
